@@ -6,4 +6,4 @@ The core of the project involves extracting raw job data from Kaggle, refining i
 
 This project represents a collaborative effort to harness the potential of data analytics to provide valuable insights into the job market.
 Tableau Dashboard Link: https://public.tableau.com/views/Job_Analytic_Portal/Dashboard1?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link&:device=desktop
-##Netlify Link: https://anjobportal.netlify.app
+Netlify Link: https://anjobportal.netlify.app
