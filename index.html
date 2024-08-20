@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class='tableauPlaceholder' id='viz1724129320164' style='position: relative'>
+        <noscript>
+            <a href='#'><img alt=' ' src='https://public.tableau.com/static/images/Jo/Job_Analytic_Portal/Dashboard1/1_rss.png' style='border: none' /></a>
+        </noscript>
+        <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='path' value='views/Job_Analytic_Portal/Dashboard1?:language=en-US&amp;:embed=true&amp;:sid=&amp;:redirect=auth' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Jo/Job_Analytic_Portal/Dashboard1/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+        </object>
+    </div>
+
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1724129320164');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+
+        if (divElement.offsetWidth > 800) {
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        } else if (divElement.offsetWidth > 500) {
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        } else {
+            vizElement.style.width = '100%';
+            vizElement.style.minHeight = '2300px';
+            vizElement.style.maxHeight = (divElement.offsetWidth * 1.77) + 'px';
+        }
+
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+        var viz;
+
+        function initializeViz() {
+            var containerDiv = document.getElementById('viz1724129320164');
+            var url = 'https://public.tableau.com/views/Job_Analytic_Portal/Dashboard1?:language=en-US&amp;:embed=true&amp;:sid=&amp;:redirect=auth';
+            viz = new tableau.Viz(containerDiv, url, {
+                hideTabs: true,
+                onFirstInteractive: setupTimeBasedVisibility
+            });
+        }
+
+        function setupTimeBasedVisibility() {
+            function controlSheetVisibility() {
+                var currentTime = new Date();
+                var currentHour = currentTime.getHours();
+                viz.getWorkbook().getActiveSheet().getWorksheets().get('Task3').then(function(sheet) {
+                    if ((currentHour >= 13 && currentHour < 14) || (currentHour >= 18 && currentHour < 19)) {
+                        sheet.hide(); // Hide the sheet
+                    } else {
+                        sheet.show(); // Show the sheet
+                    }
+                });
+            }
+            setInterval(controlSheetVisibility, 60000); // Check every minute
+        }
+
+        initializeViz();
+    </script>
+
+
+</body>
+
+</html>
