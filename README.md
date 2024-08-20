@@ -1,4 +1,4 @@
-# JobPortalAnalysis - Tableau
+# JobAnalyticPortal - Tableau
 
 Real-Time Job Analytics Dashboard project aims to develop a dynamic and interactive dashboard that provides real-time insights into the job market. By leveraging data cleaning and analysis capabilities of Python and the visualization power of Tableau, we have created a comprehensive platform to explore and understand job trends.
 
